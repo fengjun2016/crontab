@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/fengjun2016/crontab/master"
 	"runtime"
+	"time"
 )
 
 var (
@@ -49,6 +50,9 @@ func main() {
 	}
 
 	//正常退出
+	for {
+		time.Sleep(1 * time.Second) //防止http apiServer协程退出
+	}
 	return
 
 ERR:
